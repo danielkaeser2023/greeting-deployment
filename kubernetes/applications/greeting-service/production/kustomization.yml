@@ -2,23 +2,23 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - github.com/danielkaeser2023/greeting-service/k8s?ref=main
+- github.com/danielkaeser2023/greeting-service/k8s?ref=main
 
 patchesStrategicMerge:
-  - patch-env.yml
-  - patch-resources.yml
+- patch-env.yml
+- patch-resources.yml
 
 configMapGenerator:
-  - behavior: merge
-    files:
-      - application-prod.yml
-    name: greeting-config
+- behavior: merge
+  files:
+  - application-prod.yml
+  name: greeting-config
 
 images:
-  - name: greeting-service
-    newName: ghcr.io/danielkaeser2023/greeting-service
-    newTag: latest
+- name: greeting-service
+  newName: ghcr.io/danielkaeser2023/greeting-service
+  newTag: 33487c55d4e6bb331f92f99842a32c1e31251b1e
 
 replicas:
-  - count: 2
-    name: greeting-service
+- count: 2
+  name: greeting-service
