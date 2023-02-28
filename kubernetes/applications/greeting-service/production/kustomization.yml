@@ -17,7 +17,7 @@ configMapGenerator:
 images:
 - name: greeting-service
   newName: ghcr.io/danielkaeser2023/greeting-service
-  newTag: 33487c55d4e6bb331f92f99842a32c1e31251b1e
+  newTag: 438e06bc3a1290473d8a54fb81dfbdae10975443
 
 replicas:
 - count: 2
